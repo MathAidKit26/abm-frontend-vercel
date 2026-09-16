@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/index.css",
+      "destination": "/home_page/index.css"
+    },
+    {
       "source": "/",
       "destination": "/home_page/index.html"
     },
