@@ -1,14 +1,12 @@
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/",
-      "destination": "/home_page/index.html",
-      "permanent": false
+      "destination": "/home_page/index.html"
     },
     {
       "source": "/bm",
-      "destination": "/home_page/index.bm.html",
-      "permanent": false
+      "destination": "/home_page/index.bm.html"
     }
   ]
 }
