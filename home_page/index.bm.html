@@ -9,7 +9,14 @@
     <link rel="stylesheet" href="../general.css" />
 
     <title>Bab 5 Tingkatan 5</title>
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#ffffff" />
   </head>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js");
+    }
+  </script>
   <body>
     <div class="background">
       <img src="../assets/first cloud.png" class="f_cloud" />
