@@ -74,9 +74,7 @@ button.addEventListener("click", () => {
 
   // If clicked 5 times, reset achievements
   if (clickCount === 3) {
-    if (confirm("Clear all achievements?")) {
-      localStorage.removeItem("achievements");
-    }
+    localStorage.clear();
     location.reload();
   }
 
