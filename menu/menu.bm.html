@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+
+    <link rel="stylesheet" href="menu.css" />
+    <link rel="stylesheet" href="../general.css" />
+  </head>
+  <body>
+    <a class="return" href="../home_page/index.bm.html"></a>
+
+    <div class="pixel-corners--wrapper">
+      <div class="container">
+        <div class="nav">
+          <a class="games" href="../game/game.bm.html">
+            <img src="../assets/games.png" />
+            <h1>PERMAINAN</h1>
+          </a>
+          <a class="notes" href="../note/note.bm.html">
+            <img src="../assets/notes.png" />
+            <h1>NOTA</h1>
+          </a>
+          <a class="workspace" href="../workspace/workspace.bm.html">
+            <img src="../assets/workspace.png" />
+            <h1>RUANG KERJA</h1>
+          </a>
+        </div>
+        <div style="padding-top: 1rem; display: flex; flex-grow: 0">
+          <button class="language_button">
+            <img src="../assets/current_bm_toggle.png" width="110px" alt="" />
+          </button>
+        </div>
+        <div class="deco">
+          <img src="../assets/console1.png" />
+          <img src="../assets/console2.png" />
+        </div>
+      </div>
+    </div>
+    <script>
+      document
+        .querySelector(".language_button")
+        .addEventListener("mousedown", () => {
+          window.location.href = "menu.html";
+        });
+    </script>
+  </body>
+</html>

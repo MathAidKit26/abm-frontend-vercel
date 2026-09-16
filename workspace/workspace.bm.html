@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="ms">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Transform Lab — Form 5 Chapter 5</title>
+    <title>Makmal Transformasi — Tingkatan 5 Bab 5</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,25 +22,27 @@
       <section class="lab-section" id="lab">
         <div class="lab-grid">
           <aside class="control-panel">
-            <div class="panel-title"><span>01</span> ADD YOUR IMAGE</div>
+            <div class="panel-title"><span>01</span> TAMBAH IMEJ ANDA</div>
             <label class="upload-box" for="imageUpload"
-              ><span class="upload-icon">↑</span><strong>UPLOAD IMAGE</strong
-              ><small>PNG, JPG or WEBP</small></label
+              ><span class="upload-icon">↑</span><strong>MUAT NAIK IMEJ</strong
+              ><small>PNG, JPG atau WEBP</small></label
             >
             <input id="imageUpload" type="file" accept="image/*" />
-            <button class="demo-button" id="demoButton">USE DEMO SHAPE</button>
+            <button class="demo-button" id="demoButton">
+              GUNAKAN BENTUK DEMO
+            </button>
 
-            <div class="panel-title"><span>02</span> PLACE YOUR OBJECT</div>
+            <div class="panel-title"><span>02</span> LETAKKAN OBJEK ANDA</div>
             <div class="field-row object-position">
               <label
-                ><span class="field-label">x-coordinate</span
+                ><span class="field-label">koordinat-x</span
                 ><input
                   class="control-field"
                   id="objectX"
                   type="number"
                   value="0" /></label
               ><label
-                ><span class="field-label">y-coordinate</span
+                ><span class="field-label">koordinat-y</span
                 ><input
                   class="control-field"
                   id="objectY"
@@ -49,11 +51,11 @@
               /></label>
             </div>
 
-            <div class="panel-title"><span>03</span> PICK A TRANSFORMATION</div>
+            <div class="panel-title"><span>03</span> PILIH TRANSFORMASI</div>
             <div
               class="tool-grid"
               role="radiogroup"
-              aria-label="Transformation type"
+              aria-label="Jenis transformasi"
             >
               <button
                 class="tool active"
@@ -61,7 +63,7 @@
                 role="radio"
                 aria-checked="true"
               >
-                <b>↗</b> ENLARGE
+                <b>↗</b> PEMBESARAN
               </button>
               <button
                 class="tool"
@@ -69,7 +71,7 @@
                 role="radio"
                 aria-checked="false"
               >
-                <b>↔</b> REFLECT
+                <b>↔</b> PANTULAN
               </button>
               <button
                 class="tool"
@@ -77,7 +79,7 @@
                 role="radio"
                 aria-checked="false"
               >
-                <b>↻</b> ROTATE
+                <b>↻</b> PUTARAN
               </button>
               <button
                 class="tool"
@@ -85,27 +87,27 @@
                 role="radio"
                 aria-checked="false"
               >
-                <b>→</b> TRANSLATE
+                <b>→</b> TRANSLASI
               </button>
             </div>
 
-            <div class="panel-title"><span>04</span> SET THE RULE</div>
+            <div class="panel-title"><span>04</span> TETAPKAN PERATURAN</div>
             <div class="rule-controls" id="ruleControls"></div>
             <button class="button apply" id="applyButton">
-              APPLY TRANSFORMATION
+              GUNAKAN TRANSFORMASI
             </button>
             <button class="reset-button" id="resetButton">
-              ↺ RESET WORKSPACE
+              ↺ TETAPKAN SEMULA RUANG KERJA
             </button>
           </aside>
 
           <div class="canvas-panel">
             <div class="canvas-header">
-              <span>COORDINATE GRID</span
+              <span>GRID KOORDINAT</span
               ><span class="legend"
-                ><i class="original-dot"></i> ORIGINAL
-                <i class="previous-dot"></i> PREVIOUS
-                <i class="new-dot"></i> PREVIEW</span
+                ><i class="original-dot"></i> ASAL
+                <i class="previous-dot"></i> SEBELUM INI
+                <i class="new-dot"></i> PRA TONTON</span
               >
             </div>
             <div class="canvas-wrap">
@@ -113,23 +115,23 @@
                 id="transformCanvas"
                 width="900"
                 height="640"
-                aria-label="Coordinate plane transformation workspace"
+                aria-label="Ruang kerja transformasi satah koordinat"
               ></canvas>
               <div class="empty-message" id="emptyMessage">
-                UPLOAD AN IMAGE<br />OR TRY THE DEMO SHAPE
+                MUAT NAIK IMEJ<br />ATAU CUBA BENTUK DEMO
               </div>
             </div>
             <div class="canvas-footer">
-              <span id="ruleReadout">ENLARGEMENT, SCALE FACTOR 2</span
-              ><span>ORIGIN: (0, 0)</span>
+              <span id="ruleReadout">PEMBESARAN, FAKTOR SKALA 2</span
+              ><span> ASAL: (0, 0)</span>
             </div>
             <div class="history-panel">
               <div class="history-title">
-                APPLIED STEPS <span id="historyCount">0 STEPS</span>
+                LANGKAH YANG DILAKUKAN <span id="historyCount">0 LANGKAH</span>
               </div>
               <ol id="historyList">
                 <li class="history-empty">
-                  Your applied transformations will appear here.
+                  Transformasi yang anda lakukan akan dipaparkan di sini.
                 </li>
               </ol>
             </div>
@@ -137,12 +139,12 @@
         </div>
       </section>
 
-      <a class="return" href="../menu/menu.html"></a>
+      <a class="return" href="../menu/menu.bm.html"></a>
     </main>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="../archivement_helper.js"></script>
-    <script src="workspace.js"></script>
+    <script src="workspace.bm.js"></script>
     <script>
       document
         .querySelector("#applyButton")

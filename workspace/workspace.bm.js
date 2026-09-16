@@ -25,17 +25,17 @@ let image = null,
   gridState,
   history = [],
   justApplied = false;
-const points = (label = "CENTRE OF TRANSFORMATION") =>
+const points = (label = "PUSAT TRANSFORMASI") =>
   `<p class="field-label point-heading">${label}</p><div class="field-row"><label><span class="field-label">x</span><input class="control-field" id="centreX" type="number" value="${transform.centreX}"></label><label><span class="field-label">y</span><input class="control-field" id="centreY" type="number" value="${transform.centreY}"></label></div>`;
 const toolDetails = {
   enlargement: () =>
-    `<label class="field-label">SCALE FACTOR (k)</label><input class="control-field" id="scale" type="number" value="${transform.scale}" step="0.1" min="-3" max="4">${points()}`,
+    `<label class="field-label">FAKTOR SKALA (k)</label><input class="control-field" id="scale" type="number" value="${transform.scale}" step="0.1" min="-3" max="4">${points()}`,
   reflection: () =>
-    `<label class="field-label">MIRROR LINE</label><select class="control-field" id="mirror"><option value="vertical">vertical: x = a</option><option value="horizontal">horizontal: y = b</option></select><label class="field-label" id="mirrorValueLabel">VALUE (a)</label><input class="control-field" id="mirrorValue" type="number" value="${transform.mirrorValue}">`,
+    `<label class="field-label">GARIS PANTULAN</label><select class="control-field" id="mirror"><option value="vertical">mencancang: x = a</option><option value="horizontal">mengufuk: y = b</option></select><label class="field-label" id="mirrorValueLabel">NILAI (a)</label><input class="control-field" id="mirrorValue" type="number" value="${transform.mirrorValue}">`,
   rotation: () =>
-    `<label class="field-label">ANGLE</label><select class="control-field" id="angle"><option value="90">90°</option><option value="180">180°</option><option value="270">270°</option></select><label class="field-label">DIRECTION</label><select class="control-field" id="direction"><option value="anticlockwise">anticlockwise</option><option value="clockwise">clockwise</option></select>${points()}`,
+    `<label class="field-label">SUDUT</label><select class="control-field" id="angle"><option value="90">90°</option><option value="180">180°</option><option value="270">270°</option></select><label class="field-label">ARAH</label><select class="control-field" id="direction"><option value="anticlockwise">lawan arah jam</option><option value="clockwise">mengikut arah jam</option></select>${points()}`,
   translation: () =>
-    `<div class="field-row"><label><span class="field-label">RIGHT (a)</span><input class="control-field" id="dx" type="number" value="${transform.dx}"></label><label><span class="field-label">UP (b)</span><input class="control-field" id="dy" type="number" value="${transform.dy}"></label></div>`,
+    `<div class="field-row"><label><span class="field-label">KANAN (a)</span><input class="control-field" id="dx" type="number" value="${transform.dx}"></label><label><span class="field-label">ATAS (b)</span><input class="control-field" id="dy" type="number" value="${transform.dy}"></label></div>`,
 };
 function read() {
   const n = (id) => Number(document.getElementById(id)?.value) || 0;
@@ -62,12 +62,12 @@ function read() {
   transform.objectY = n("objectY");
   let s =
     tool === "enlargement"
-      ? `ENLARGEMENT, k = ${transform.scale}, CENTRE (${transform.centreX}, ${transform.centreY})`
+      ? `PEMBESARAN, k = ${transform.scale}, PUSAT (${transform.centreX}, ${transform.centreY})`
       : tool === "reflection"
-        ? `REFLECTION IN ${transform.mirror === "vertical" ? "x" : "y"} = ${transform.mirrorValue}`
+        ? `PANTULAN PADA ${transform.mirror === "vertical" ? "x" : "y"} = ${transform.mirrorValue}`
         : tool === "rotation"
-          ? `ROTATION ${transform.angle}° ${transform.direction.toUpperCase()}, CENTRE (${transform.centreX}, ${transform.centreY})`
-          : `TRANSLATION (${transform.dx}, ${transform.dy})`;
+          ? `PUTARAN ${transform.angle}° ${transform.direction === "anticlockwise" ? "LAWAN ARAH JAM" : "MENGIKUT ARAH JAM"}, PUSAT (${transform.centreX}, ${transform.centreY})`
+          : `TRANSLASI (${transform.dx}, ${transform.dy})`;
   ruleReadout.textContent = s;
 }
 function controls() {
@@ -77,7 +77,7 @@ function controls() {
     document.getElementById("mirror").addEventListener("change", () => {
       transform.mirror = document.getElementById("mirror").value;
       document.getElementById("mirrorValueLabel").textContent =
-        transform.mirror === "vertical" ? "VALUE (a)" : "VALUE (b)";
+        transform.mirror === "vertical" ? "NILAI (a)" : "NILAI (b)";
       read();
       draw();
     });
@@ -187,7 +187,7 @@ function grid() {
       ctx.fillText(i, cx + i * unit - 7, cy + 20);
   }
   for (let j = firstJ; j <= lastJ; j += major) {
-    if (j && cy + j * unit > 10 && cy + j * unit < h - 10)
+    if (j && cy - j * unit > 10 && cy - j * unit < h - 10)
       ctx.fillText(j, cx + 7, cy - j * unit + 6);
   }
   ctx.font = "18px VT323";
@@ -329,18 +329,18 @@ function object(alpha, newOne) {
 }
 function describe(t) {
   if (t.kind === "enlargement")
-    return `Enlargement: k = ${t.scale}, centre (${t.centreX}, ${t.centreY})`;
+    return `Pembesaran: k = ${t.scale}, pusat (${t.centreX}, ${t.centreY})`;
   if (t.kind === "reflection")
-    return `Reflection: ${t.mirror === "vertical" ? "x" : "y"} = ${t.mirrorValue}`;
+    return `Pantulan: ${t.mirror === "vertical" ? "x" : "y"} = ${t.mirrorValue}`;
   if (t.kind === "rotation")
-    return `Rotation: ${t.angle}° ${t.direction}, centre (${t.centreX}, ${t.centreY})`;
-  return `Translation: (${t.dx}, ${t.dy})`;
+    return `Putaran: ${t.angle}° ${t.direction === "anticlockwise" ? "lawan arah jam" : "mengikut arah jam"}, pusat (${t.centreX}, ${t.centreY})`;
+  return `Translasi: (${t.dx}, ${t.dy})`;
 }
 function updateHistory() {
-  historyCount.textContent = `${history.length} ${history.length === 1 ? "STEP" : "STEPS"}`;
+  historyCount.textContent = `${history.length} ${history.length === 1 ? "LANGKAH" : "LANGKAH"}`;
   historyList.innerHTML = history.length
     ? history.map((t) => `<li>${describe(t)}</li>`).join("")
-    : '<li class="history-empty">Your applied transformations will appear here.</li>';
+    : '<li class="history-empty">Transformasi yang anda lakukan akan dipaparkan di sini.</li>';
 }
 function draw() {
   gridState = grid();
@@ -389,8 +389,8 @@ document.getElementById("applyButton").addEventListener("click", () => {
   updateHistory();
   draw();
   let b = document.getElementById("applyButton");
-  b.textContent = "✓ APPLIED!";
-  setTimeout(() => (b.textContent = "APPLY TRANSFORMATION"), 900);
+  b.textContent = "✓ DIGUNAKAN!";
+  setTimeout(() => (b.textContent = "GUNAKAN TRANSFORMASI"), 900);
 });
 document.getElementById("resetButton").addEventListener("click", () => {
   image = null;

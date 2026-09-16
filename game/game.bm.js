@@ -341,12 +341,13 @@ function getSpriteOutlineCanvas(type, image) {
 const stages = [
   {
     stage: 1,
-    title: "1956 (Feb): The London Independence Talks",
+    title: "1956 (Feb): Rundingan Kemerdekaan di London",
     type: "enlargement",
     objectType: "tunku",
     historicalFact:
-      "In February 1956, Tunku Abdul Rahman led the Independence Mission to London to negotiate Merdeka with the British Government.",
-    objective: "Use enlargement to place Tunku Abdul Rahman on the target.",
+      "Pada Februari 1956, Tunku Abdul Rahman mengetuai Misi Kemerdekaan ke London untuk berunding dengan Kerajaan British bagi mencapai kemerdekaan.",
+    objective:
+      "Gunakan pembesaran untuk meletakkan Tunku Abdul Rahman pada sasaran.",
     objectPoints: [
       { x: 1, y: 1 },
       { x: 3, y: 1 },
@@ -358,12 +359,12 @@ const stages = [
   },
   {
     stage: 2,
-    title: "1956 (Feb 20): Announcement at Bandar Hilir, Melaka",
+    title: "1956 (20 Feb): Pengumuman di Bandar Hilir, Melaka",
     type: "enlargement_negative",
     objectType: "bunga",
     historicalFact:
-      "Upon returning from London, Tunku officially announced the Merdeka date at Padang Bandar Hilir, Melaka, where crowds welcomed him with flowers.",
-    objective: "Use enlargement to place the Bunga Raya on the target.",
+      "Setelah pulang dari London, Tunku secara rasmi mengumumkan tarikh kemerdekaan di Padang Bandar Hilir, Melaka, tempat orang ramai menyambut kepulangannya dengan bunga.",
+    objective: "Gunakan pembesaran untuk meletakkan Bunga Raya pada sasaran.",
     objectPoints: [
       { x: 2, y: 2 },
       { x: 5, y: 2 },
@@ -375,12 +376,12 @@ const stages = [
   },
   {
     stage: 3,
-    title: "1957 (Aug 30, 11:58 PM): Lowering the Union Jack",
+    title: "1957 (30 Ogos, 11:58 Malam): Penurunan Union Jack",
     type: "rotation",
     objectType: "unionjack",
     historicalFact:
-      "At Dataran Merdeka at midnight, the British Union Jack was rotated down from its mast for the last time.",
-    objective: "Use rotation to place the Union Jack on the target.",
+      "Di Dataran Merdeka pada tengah malam, Union Jack British diputar ke bawah dari tiangnya buat kali terakhir.",
+    objective: "Gunakan putaran untuk meletakkan Union Jack pada sasaran.",
     objectPoints: [
       { x: -6, y: 2 },
       { x: -2, y: 2 },
@@ -393,12 +394,13 @@ const stages = [
   },
   {
     stage: 4,
-    title: "1957 (Aug 31, 12:00 AM): Hoisting the Malayan Flag",
+    title:
+      "1957 (31 Ogos, 12:00 Tengah Malam): Pengibaran Bendera Tanah Melayu",
     type: "rotation",
     objectType: "jalur",
     historicalFact:
-      "As midnight struck on August 31, 1957, the flag of Malaya was rotated upward to the top of the flagpole.",
-    objective: "Use rotation to place the Jalur Gemilang on the target.",
+      "Apabila tengah malam menjelang 31 Ogos 1957, bendera Tanah Melayu diputar ke atas hingga ke puncak tiang bendera.",
+    objective: "Gunakan putaran untuk meletakkan Jalur Gemilang pada sasaran.",
     objectPoints: [
       { x: 2, y: -6 },
       { x: 6, y: -6 },
@@ -411,12 +413,12 @@ const stages = [
   },
   {
     stage: 5,
-    title: "1957 (Aug 31): Sultan Abdul Samad Building Symmetry",
+    title: "1957 (31 Ogos): Simetri Bangunan Sultan Abdul Samad",
     type: "reflection",
     objectType: "clocktower",
     historicalFact:
-      "The historic Sultan Abdul Samad Clock Tower overlooked Dataran Merdeka as thousands gathered to celebrate national sovereignty.",
-    objective: "Use reflection to place the Clock Tower on the target.",
+      "Menara Jam Bangunan Sultan Abdul Samad yang bersejarah menghadap Dataran Merdeka ketika ribuan orang berkumpul untuk meraikan kedaulatan negara.",
+    objective: "Gunakan pantulan untuk meletakkan Menara Jam pada sasaran.",
     objectPoints: [
       { x: -5, y: -5 },
       { x: -2, y: -5 },
@@ -428,12 +430,12 @@ const stages = [
   },
   {
     stage: 6,
-    title: "1957 (Aug 31, 8:15 AM): Arrival of the Royal Motorcade",
+    title: "1957 (31 Ogos, 8:15 Pagi): Ketibaan Konvoi Diraja",
     type: "reflection",
     objectType: "motorcade",
     historicalFact:
-      "The Royal motorcade carrying Tunku Abdul Rahman moved along the streets of Kuala Lumpur toward the Merdeka celebration venue.",
-    objective: "Use reflection to place the motorcade on the target.",
+      "Konvoi Diraja yang membawa Tunku Abdul Rahman bergerak melalui jalan-jalan di Kuala Lumpur menuju ke tempat sambutan kemerdekaan.",
+    objective: "Gunakan pantulan untuk meletakkan konvoi pada sasaran.",
     objectPoints: [
       { x: -7, y: 3 },
       { x: -3, y: 3 },
@@ -445,12 +447,12 @@ const stages = [
   },
   {
     stage: 7,
-    title: "1957 (Aug 31, 9:30 AM): The 7 Proclamations of MERDEKA!",
+    title: "1957 (31 Ogos, 9:30 Pagi): 7 Laungan MERDEKA!",
     type: "translation",
     objectType: "keris",
     historicalFact:
-      "Tunku raised his hand seven times shouting 'MERDEKA!'. Move the keris to complete this final challenge.",
-    objective: "Use translation to place the keris on the target.",
+      "Tunku mengangkat tangannya sebanyak tujuh kali sambil melaungkan 'MERDEKA!'. Gerakkan keris untuk melengkapkan cabaran terakhir ini.",
+    objective: "Gunakan translasi untuk meletakkan keris pada sasaran.",
     objectPoints: [
       { x: -5, y: -2 },
       { x: -2, y: -2 },
@@ -802,7 +804,7 @@ function drawCanvas() {
     ctx.stroke();
     ctx.fillStyle = "#0033a0";
     ctx.font = "14px VT323";
-    ctx.fillText(`Center (${state.cx}, ${state.cy})`, cp.x + 10, cp.y - 8);
+    ctx.fillText(`Pusat (${state.cx}, ${state.cy})`, cp.x + 10, cp.y - 8);
   } else if (stg.type === "rotation") {
     const cp = gridToPixel(state.rcx, state.rcy);
     ctx.fillStyle = "#ffdf00";
@@ -814,7 +816,7 @@ function drawCanvas() {
     ctx.stroke();
     ctx.fillStyle = "#0033a0";
     ctx.font = "14px VT323";
-    ctx.fillText(`Pivot (${state.rcx}, ${state.rcy})`, cp.x + 10, cp.y - 8);
+    ctx.fillText(`Paksi (${state.rcx}, ${state.rcy})`, cp.x + 10, cp.y - 8);
   } else if (stg.type === "reflection") {
     ctx.save();
     ctx.strokeStyle = "#0033a0";
@@ -992,18 +994,18 @@ function renderControlPanel() {
   const container = document.getElementById("controls-container");
   const stg = stages[currentStage];
   document.getElementById("type-header").innerText =
-    `STAGE ${stg.stage}: ${stg.type.toUpperCase()}`;
+    `PERINGKAT ${stg.stage}: ${stg.type === "enlargement_negative" ? "PEMBESARAN" : stg.type.toUpperCase()}`;
 
   let html = "";
 
   if (stg.type === "enlargement" || stg.type === "enlargement_negative") {
     html = `
             <div class="p-3 border flex flex-col gap-2" style="background-color: var(--color-dark-purple); border-color: var(--gold);">
-                <label class="pixel-font text-xs" style="color: var(--color-pale-mint);">SCALE FACTOR (k):</label>
+                <label class="pixel-font text-xs" style="color: var(--color-pale-mint);">FAKTOR SKALA (k):</label>
                 <input type="number" id="scale-input" min="-3" max="4" step="0.5" value="${state.k}" class="w-full py-2 text-sm">
             </div>
             <div class="p-3 border flex flex-col gap-2" style="background-color: var(--color-dark-purple); border-color: var(--gold);">
-                <label class="pixel-font text-xs" style="color: var(--color-pale-mint);">CENTER P(x, y):</label>
+                <label class="pixel-font text-xs" style="color: var(--color-pale-mint);">PUSAT P(x, y):</label>
                 <div class="grid grid-cols-2 gap-2">
                     <input type="number" id="cx-input" min="-10" max="10" value="${state.cx}" placeholder="X" class="w-full py-2 text-sm">
                     <input type="number" id="cy-input" min="-10" max="10" value="${state.cy}" placeholder="Y" class="w-full py-2 text-sm">
@@ -1013,7 +1015,7 @@ function renderControlPanel() {
   } else if (stg.type === "rotation") {
     html = `
             <div class="p-3 border flex flex-col gap-2" style="background-color: var(--color-dark-purple); border-color: var(--gold);">
-                <label class="pixel-font text-xs" style="color: var(--color-pale-mint);">ANGLE & DIRECTION:</label>
+                <label class="pixel-font text-xs" style="color: var(--color-pale-mint);">SUDUT & ARAH:</label>
                 <div class="grid grid-cols-2 gap-2">
                     <select id="angle-select" class="py-2 text-xs">
                         <option value="90" ${state.angle === 90 ? "selected" : ""}>90°</option>
@@ -1021,13 +1023,13 @@ function renderControlPanel() {
                         <option value="270" ${state.angle === 270 ? "selected" : ""}>270°</option>
                     </select>
                     <select id="dir-select" class="py-2 text-xs">
-                        <option value="cw" ${state.dir === "cw" ? "selected" : ""}>Clockwise ↻</option>
-                        <option value="ccw" ${state.dir === "ccw" ? "selected" : ""}>Anti-CW ↺</option>
+                        <option value="cw" ${state.dir === "cw" ? "selected" : ""}>Mengikut arah jam ↻</option>
+                        <option value="ccw" ${state.dir === "ccw" ? "selected" : ""}>Lawan arah jam ↺</option>
                     </select>
                 </div>
             </div>
             <div class="p-3 border flex flex-col gap-2" style="background-color: var(--color-dark-purple); border-color: var(--gold);">
-                <label class="pixel-font text-xs" style="color: var(--color-pale-mint);">PIVOT CENTER (x, y):</label>
+                <label class="pixel-font text-xs" style="color: var(--color-pale-mint);">PUSAT PUTARAN (x, y):</label>
                 <div class="grid grid-cols-2 gap-2">
                     <input type="number" id="rcx-input" min="-10" max="10" value="${state.rcx}" class="w-full py-2 text-sm">
                     <input type="number" id="rcy-input" min="-10" max="10" value="${state.rcy}" class="w-full py-2 text-sm">
@@ -1037,15 +1039,15 @@ function renderControlPanel() {
   } else if (stg.type === "reflection") {
     html = `
             <div class="p-3 border flex flex-col gap-2" style="background-color: var(--color-dark-purple); border-color: var(--gold);">
-                <label class="pixel-font text-xs" style="color: var(--color-pale-mint);">MIRROR AXIS / LINE:</label>
+                <label class="pixel-font text-xs" style="color: var(--color-pale-mint);">PAKSI / GARIS PANTULAN:</label>
                 <select id="ref-type-select" class="py-2 text-xs w-full">
-                    <option value="x-axis" ${state.refType === "x-axis" ? "selected" : ""}>x-axis (y = 0)</option>
-                    <option value="y-axis" ${state.refType === "y-axis" ? "selected" : ""}>y-axis (x = 0)</option>
-                    <option value="x_line" ${state.refType === "x_line" ? "selected" : ""}>Line x = c</option>
-                    <option value="y_line" ${state.refType === "y_line" ? "selected" : ""}>Line y = c</option>
+                    <option value="x-axis" ${state.refType === "x-axis" ? "selected" : ""}>paksi-x (y = 0)</option>
+                    <option value="y-axis" ${state.refType === "y-axis" ? "selected" : ""}>paksi-y (x = 0)</option>
+                    <option value="x_line" ${state.refType === "x_line" ? "selected" : ""}>Garis x = c</option>
+                    <option value="y_line" ${state.refType === "y_line" ? "selected" : ""}>Garis y = c</option>
                 </select>
                 <div id="ref-val-box" class="mt-2 flex items-center gap-2">
-                    <span class="text-xs" style="color: var(--gold);">Line Value c:</span>
+                    <span class="text-xs" style="color: var(--gold);">Nilai garis c:</span>
                     <input type="number" id="ref-val-input" min="-10" max="10" value="${state.refVal}" class="w-full py-1 text-sm">
                 </div>
             </div>
@@ -1053,7 +1055,7 @@ function renderControlPanel() {
   } else if (stg.type === "translation") {
     html = `
             <div class="p-3 border flex flex-col gap-2" style="background-color: var(--color-dark-purple); border-color: var(--gold);">
-                <label class="pixel-font text-xs" style="color: var(--color-pale-mint);">TRANSLATION VECTOR (x, y):</label>
+                <label class="pixel-font text-xs" style="color: var(--color-pale-mint);">VEKTOR TRANSLASI (x, y):</label>
                 <div class="grid grid-cols-2 gap-2">
                     <input type="number" id="tx-input" min="-15" max="15" value="${state.tx}" placeholder="X" class="w-full py-2 text-sm">
                     <input type="number" id="ty-input" min="-15" max="15" value="${state.ty}" placeholder="Y" class="w-full py-2 text-sm">
@@ -1063,20 +1065,20 @@ function renderControlPanel() {
   } else if (stg.type === "combined") {
     html = `
             <div class="p-2 border flex flex-col gap-1" style="background-color: var(--color-dark-purple); border-color: var(--gold);">
-                <label class="pixel-font text-[10px]" style="color: var(--yellow);">STEP 1: PICK A TRANSFORMATION</label>
+                <label class="pixel-font text-[10px]" style="color: var(--yellow);">LANGKAH 1: PILIH TRANSFORMASI</label>
                 <select id="c1-type" class="py-1 text-[10px]">
-                    <option value="" ${state.combo1_type === "" ? "selected" : ""}>Choose transformation</option>
-                    <option value="translation" ${state.combo1_type === "translation" ? "selected" : ""}>Translation</option>
-                    <option value="rotation" ${state.combo1_type === "rotation" ? "selected" : ""}>Rotation</option>
+                    <option value="" ${state.combo1_type === "" ? "selected" : ""}>Pilih transformasi</option>
+                    <option value="translation" ${state.combo1_type === "translation" ? "selected" : ""}>Translasi</option>
+                    <option value="rotation" ${state.combo1_type === "rotation" ? "selected" : ""}>Putaran</option>
                 </select>
                 ${renderCombinedInputs(1)}
             </div>
             <div class="p-2 border flex flex-col gap-1" style="background-color: var(--color-dark-purple); border-color: var(--gold);">
-                <label class="pixel-font text-[10px]" style="color: var(--yellow);">STEP 2: PICK A TRANSFORMATION</label>
+                <label class="pixel-font text-[10px]" style="color: var(--yellow);">LANGKAH 2: PILIH TRANSFORMASI</label>
                 <select id="c2-type" class="py-1 text-[10px]">
-                    <option value="" ${state.combo2_type === "" ? "selected" : ""}>Choose transformation</option>
-                    <option value="translation" ${state.combo2_type === "translation" ? "selected" : ""}>Translation</option>
-                    <option value="rotation" ${state.combo2_type === "rotation" ? "selected" : ""}>Rotation</option>
+                    <option value="" ${state.combo2_type === "" ? "selected" : ""}>Pilih transformasi</option>
+                    <option value="translation" ${state.combo2_type === "translation" ? "selected" : ""}>Translasi</option>
+                    <option value="rotation" ${state.combo2_type === "rotation" ? "selected" : ""}>Putaran</option>
                 </select>
                 ${renderCombinedInputs(2)}
             </div>
@@ -1094,9 +1096,9 @@ function renderCombinedInputs(step) {
     return `<div class="grid grid-cols-2 gap-2"><input type="number" id="${prefix}-tx" min="-15" max="15" value="${state[`combo${step}_tx`]}" placeholder="X" class="w-full py-1 text-xs"><input type="number" id="${prefix}-ty" min="-15" max="15" value="${state[`combo${step}_ty`]}" placeholder="Y" class="w-full py-1 text-xs"></div>`;
   }
   if (type === "rotation") {
-    return `<div class="grid grid-cols-2 gap-2 mb-1"><select id="${prefix}-angle" class="py-1 text-[10px]"><option value="90" ${state[`combo${step}_angle`] === 90 ? "selected" : ""}>90°</option><option value="180" ${state[`combo${step}_angle`] === 180 ? "selected" : ""}>180°</option><option value="270" ${state[`combo${step}_angle`] === 270 ? "selected" : ""}>270°</option></select><select id="${prefix}-dir" class="py-1 text-[10px]"><option value="cw" ${state[`combo${step}_dir`] === "cw" ? "selected" : ""}>CW ↻</option><option value="ccw" ${state[`combo${step}_dir`] === "ccw" ? "selected" : ""}>CCW ↺</option></select></div><div class="grid grid-cols-2 gap-2"><input type="number" id="${prefix}-rcx" min="-10" max="10" value="${state[`combo${step}_rcx`]}" placeholder="Center X" class="w-full py-1 text-xs"><input type="number" id="${prefix}-rcy" min="-10" max="10" value="${state[`combo${step}_rcy`]}" placeholder="Center Y" class="w-full py-1 text-xs"></div>`;
+    return `<div class="grid grid-cols-2 gap-2 mb-1"><select id="${prefix}-angle" class="py-1 text-[10px]"><option value="90" ${state[`combo${step}_angle`] === 90 ? "selected" : ""}>90°</option><option value="180" ${state[`combo${step}_angle`] === 180 ? "selected" : ""}>180°</option><option value="270" ${state[`combo${step}_angle`] === 270 ? "selected" : ""}>270°</option></select><select id="${prefix}-dir" class="py-1 text-[10px]"><option value="cw" ${state[`combo${step}_dir`] === "cw" ? "selected" : ""}>Mengikut arah jam ↻</option><option value="ccw" ${state[`combo${step}_dir`] === "ccw" ? "selected" : ""}>Lawan arah jam ↺</option></select></div><div class="grid grid-cols-2 gap-2"><input type="number" id="${prefix}-rcx" min="-10" max="10" value="${state[`combo${step}_rcx`]}" placeholder="Pusat X" class="w-full py-1 text-xs"><input type="number" id="${prefix}-rcy" min="-10" max="10" value="${state[`combo${step}_rcy`]}" placeholder="Pusat Y" class="w-full py-1 text-xs"></div>`;
   }
-  return '<p class="text-xs" style="color: var(--color-pale-mint);">Choose a transformation to set its values.</p>';
+  return '<p class="text-xs" style="color: var(--color-pale-mint);">Pilih transformasi untuk menetapkan nilainya.</p>';
 }
 
 function attachInputListeners() {
@@ -1245,10 +1247,13 @@ function checkAnswer() {
     document.getElementById("score-val").innerText = score
       .toString()
       .padStart(4, "0");
-    showToast("STAGE CLEAR!", `You successfully aligned Stage ${stg.stage}!`);
+    showToast(
+      "PERINGKAT SELESAI!",
+      `Anda berjaya menyusun Peringkat ${stg.stage} dengan betul!`,
+    );
   } else {
     alert(
-      "Incorrect positioning! Adjust your inputs on the control panel to match the red target.",
+      "Kedudukan tidak betul! Laraskan input pada panel kawalan supaya sepadan dengan sasaran merah.",
     );
   }
 }
@@ -1273,7 +1278,7 @@ function goToNextLevel() {
     currentStage++;
     loadStage(currentStage);
   } else {
-    alert("CONGRATULATIONS! You completed all 7 Merdeka stages!");
+    alert("TAHNIAH! Anda telah melengkapkan kesemua 7 peringkat Merdeka!");
     currentStage = 0;
     score = 0;
     document.getElementById("score-val").innerText = "0000";
