@@ -61,4 +61,28 @@ function createOverlay() {
   });
 }
 
-button.addEventListener("click", createOverlay);
+let clickCount = 0;
+let clickTimer = null;
+
+button.addEventListener("click", () => {
+  clickCount++;
+
+  // Clear existing timer on each click
+  if (clickTimer) {
+    clearTimeout(clickTimer);
+  }
+
+  // If clicked 5 times, reset achievements
+  if (clickCount === 3) {
+    localStorage.clear();
+    location.reload();
+  }
+
+  // Reset count if user stops clicking for more than 1.5 seconds
+  clickTimer = setTimeout(() => {
+    clickCount = 0;
+  }, 1500);
+
+  // Still open the overlay normally on single clicks
+  createOverlay();
+});
