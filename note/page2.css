@@ -15,6 +15,11 @@
   transition: all 0.3s;
 }
 
+.text{
+  overflow: auto;
+  height: 100%;
+}
+
 #twin{
   top: 0;
   left: -3vw;
