@@ -183,14 +183,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="../archivement_helper.js"></script>
     <script>
-      document.querySelector("#durian").addEventListener("mousedown", () => {
-        unlockAchievement("durian");
+      document.querySelectorAll("#durian").forEach((el) => {
+        el.addEventListener("mousedown", () => {
+          unlockAchievement("durian");
+        });
       });
-      document.querySelector("#twin").addEventListener("mousedown", () => {
-        unlockAchievement("n_twin");
+      document.querySelectorAll("#twin").forEach((el) => {
+        el.addEventListener("mousedown", () => {
+          unlockAchievement("n_twin");
+        });
       });
-      document.querySelector("#wau").addEventListener("mousedown", () => {
-        unlockAchievement("wau");
+      document.querySelectorAll("#wau").forEach((el) => {
+        el.addEventListener("mousedown", () => {
+          unlockAchievement("wau");
+        });
       });
 
       let reachedBottom = false;

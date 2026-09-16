@@ -14,6 +14,7 @@
 }
 
 .achievement-modal {
+  position: relative;
   width: min(100%, 520px);
   max-height: calc(100dvh - 2rem);
 
@@ -26,6 +27,45 @@
   box-shadow: 7px 7px 0 var(--color-ink);
 
   overflow-y: auto;
+}
+
+.clear-achievements {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  display: grid;
+  place-items: center;
+
+  width: 38px;
+  height: 38px;
+
+  padding: 0;
+
+  font-size: 1rem;
+  line-height: 1;
+
+  color: var(--color-ink);
+  background: var(--color-white);
+
+  border: 3px solid var(--color-ink);
+  box-shadow: 3px 3px 0 var(--color-ink);
+
+  cursor: pointer;
+
+  transition:
+    transform 100ms ease,
+    box-shadow 100ms ease;
+}
+
+.clear-achievements:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--color-ink);
+}
+
+.clear-achievements:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--color-ink);
 }
 
 .achievement-modal h2 {
